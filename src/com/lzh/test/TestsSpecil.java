@@ -52,7 +52,7 @@ public class TestsSpecil {
     public void findSpecilByParam(){
 
         SqlSession sqlSession = MybatisUtils.getSqlSession(false);
-        int pageNum = 2;
+        int pageNum = 1;
         int pageSize = 5;
         int start = (pageNum-1)*pageSize;
         SpecilMapper specilMapper = sqlSession.getMapper(SpecilMapper.class);
