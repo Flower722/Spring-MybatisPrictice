@@ -18,7 +18,7 @@ import java.util.Map;
 public class TestsSpecil {
 
     @Test
-    public void findAllByColumnLike() throws IOException {
+    public void findAllByColumnLike(){
 
         SqlSession sqlSession = MybatisUtils.getSqlSession(false);
         String columnName = "spilinfoname";
@@ -47,4 +47,6 @@ public class TestsSpecil {
         // 5、关闭SqlSession
         MybatisUtils.closeSqlSession(sqlSession);
     }
+
+
 }

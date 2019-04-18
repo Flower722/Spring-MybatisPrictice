@@ -4,9 +4,23 @@
 <!-- namespace表示命名空间 -->
 <mapper namespace="com.lzh.mapper.SpecilMapper">
 
+    <resultMap id="myResulMap" type="specil">
+
+        <id property="sid" column="spilinfoid"/>
+        <result property="did" column="depinfoid"/>
+        <result property="scode" column="spilinfocode"/>
+        <result property="sname" column="spilinfoname"/>
+        <result property="saim" column="spilinfoaim"/>
+        <result property="sprodire" column="spilinfoprodire"/>
+    </resultMap>
+
     <!-- 根据编号获取客户信息 -->
-    <select id="findSpecilSplit" parameterType="java.util.Map" resultType="com.lzh.po.Specil">
+    <select id="findSpecilSplit" parameterType="java.util.Map" resultMap="myResulMap">
         select * from specilinfo where ${columnName} like concat('%',#{keyword},'%') group by ${columnName2} ${rank} limit #{start},#{pageSize}
+    </select>
+
+    <select id="findSpecilByParam" resultType="com.lzh.po.Specil">
+
     </select>
 
 </mapper>
