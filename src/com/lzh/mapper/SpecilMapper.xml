@@ -4,12 +4,6 @@
 <!-- namespace表示命名空间 -->
 <mapper namespace="com.lzh.mapper.SpecilMapper">
 
-<!--    <resultMap id="resultMap" type="com.lzh.po.Specil">
-        <id property="id" column="id"/>
-        <result property="username" column="username"/>
-        <result property="jobs" column="jobs"/>
-        <result property="phone" column="phone"/>
-    </resultMap>-->
     <!-- 根据编号获取客户信息 -->
     <select id="findSpecilSplit" parameterType="java.util.Map" resultType="com.lzh.po.Specil">
         select * from specilinfo where ${columnName} like concat('%',#{keyword},'%') group by ${columnName2} ${rank} limit #{start},#{pageSize}
