@@ -19,8 +19,8 @@
         select * from specilinfo where ${columnName} like concat('%',#{keyword},'%') group by ${columnName2} ${rank} limit #{start},#{pageSize}
     </select>
 
-    <select id="findSpecilByParam" resultType="com.lzh.po.Specil">
-
+    <select id="findSpecilByParam" resultMap="myResulMap">
+        select * from specilinfo limit #{start},#{pageSize}
     </select>
 
 </mapper>

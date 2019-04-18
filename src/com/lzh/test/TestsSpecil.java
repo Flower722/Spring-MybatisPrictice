@@ -48,5 +48,24 @@ public class TestsSpecil {
         MybatisUtils.closeSqlSession(sqlSession);
     }
 
+    @Test
+    public void findSpecilByParam(){
+
+        SqlSession sqlSession = MybatisUtils.getSqlSession(false);
+        int pageNum = 1;
+        int pageSize = 5;
+        int start = (pageNum-1)*pageSize;
+        SpecilMapper specilMapper = sqlSession.getMapper(SpecilMapper.class);
+
+        List<Specil> specilList = specilMapper.findSpecilByParam(start,pageSize);
+
+        for (Specil specil : specilList) {
+            System.out.println(specil);
+        }
+
+        // 5、关闭SqlSession
+        MybatisUtils.closeSqlSession(sqlSession);
+    }
+
 
 }

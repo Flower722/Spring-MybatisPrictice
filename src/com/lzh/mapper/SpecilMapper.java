@@ -11,5 +11,5 @@ public interface SpecilMapper {
     // 分页查询
     List<Specil> findSpecilSplit(Map<String,Object> map);
 
-    List<Specil> findSpecilByParam(Map<String,Object> map);
+    List<Specil> findSpecilByParam(@Param(value="start")int start,@Param(value="pageSize")int pageSize);
 }
